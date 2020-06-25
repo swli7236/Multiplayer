@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "583801509026",
+    "firebase_url": "https://multiplayer-8dde3.firebaseio.com",
+    "project_id": "multiplayer-8dde3",
+    "storage_bucket": "multiplayer-8dde3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583801509026:android:b4c4dbe552dda5c6eb33fb",
+        "android_client_info": {
+          "package_name": "com.example.multiplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583801509026-0mchkoqt947ite2e1fn2ms9a2sqqll0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBg6fpg9YfbzUe-pTtGb51nJyJK0Aq8HI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583801509026-0mchkoqt947ite2e1fn2ms9a2sqqll0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
