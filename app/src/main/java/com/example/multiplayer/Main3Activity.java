@@ -85,5 +85,6 @@ public class Main3Activity extends AppCompatActivity {
                 msgRef.setValue(msg);
             }
         });
+
     }
 }

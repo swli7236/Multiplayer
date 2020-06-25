@@ -58,7 +58,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 button.setText("CREATING ROOM");
-                button.setEnabled(false);;
+                button.setEnabled(false);
                 roomName = playerName;
                 roomRef = database.getReference("rooms/"+roomName+"/player1");
                 addRoomEventListener();
@@ -97,7 +97,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 //error
                 button.setText("CREATE ROOM");
-                button.setEnabled(true);;
+                button.setEnabled(true);
                 Toast.makeText(Main2Activity.this,"Error!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -120,7 +120,7 @@ public class Main2Activity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                //error = nothing
+                //error - nothing
             }
         });
     }
