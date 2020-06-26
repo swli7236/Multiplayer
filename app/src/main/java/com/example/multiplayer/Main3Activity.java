@@ -29,7 +29,7 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.button2);
         button.setEnabled(false);
 
         database = FirebaseDatabase.getInstance();
@@ -50,15 +50,17 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //send msg
                 button.setEnabled(false);
+                msgRef = database.getReference("rooms/"+roomName+"/message");
                 msg = role + ":Poked!";
                 msgRef.setValue(msg);
+                addRoomEventListener();
             }
         });
 
-        msgRef = database.getReference("rooms/"+roomName+"/message");
-        msg = role + ":Poked!";
-        msgRef.setValue(msg);
-        addRoomEventListener();
+//        msgRef = database.getReference("rooms/"+roomName+"/message");
+//        msg = role + ":Poked!";
+//        msgRef.setValue(msg);
+//        addRoomEventListener();
     }
 
     private void addRoomEventListener() {
