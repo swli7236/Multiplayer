@@ -21,9 +21,9 @@ public class Main3Activity extends AppCompatActivity {
     String playerName = "";
     String roomName = "";
     String role = "";
-    String msg = "";
+    String message = "";
     FirebaseDatabase database;
-    DatabaseReference msgRef;
+    DatabaseReference messageRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,21 +50,21 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //send msg
                 button.setEnabled(false);
-                msgRef = database.getReference("rooms/"+roomName+"/message");
-                msg = role + ":Poked!";
-                msgRef.setValue(msg);
-                addRoomEventListener();
+                message = role + ":Poked!";
+                messageRef.setValue(message);
             }
         });
 
-//        msgRef = database.getReference("rooms/"+roomName+"/message");
-//        msg = role + ":Poked!";
-//        msgRef.setValue(msg);
-//        addRoomEventListener();
+        //listen for incoming msgs
+        messageRef = database.getReference("rooms/"+roomName+"/message");
+        message = role + ":Poked!";
+        messageRef.setValue(message);
+        addRoomEventListener();
+
     }
 
     private void addRoomEventListener() {
-        msgRef.addValueEventListener(new ValueEventListener() {
+        messageRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //msg received
@@ -84,7 +84,7 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 //error = retry
-                msgRef.setValue(msg);
+                messageRef.setValue(message);
             }
         });
 
